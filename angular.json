@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "TarjetaCredito"
+  "defaultProject": "TarjetaCredito",
+  "cli": {
+    "analytics": "8177bbfc-47f9-467a-9386-52710e867167"
+  }
 }
