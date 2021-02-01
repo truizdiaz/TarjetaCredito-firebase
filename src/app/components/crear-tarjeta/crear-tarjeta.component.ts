@@ -11,6 +11,7 @@ import { TarjetaService } from 'src/app/services/tarjeta.service';
 })
 export class CrearTarjetaComponent implements OnInit {
   form: FormGroup;
+  loading = false;
 
   constructor(private fb: FormBuilder,
               private _tarjetaService: TarjetaService,
@@ -36,11 +37,14 @@ export class CrearTarjetaComponent implements OnInit {
       fechaActualizacion: new Date(),
     }
 
+    this.loading = true;
     this._tarjetaService.guardarTarjeta(TARJETA).then(() => {
+      this.loading = false;
       console.log('tarjeta registrado');
       this.toastr.success('La tarjete fue registrada con exito!', 'Tarjeta registrada')
       this.form.reset();
     }, error => {
+      this.loading = false;
       this.toastr.error('Opps.. ocurrio un error', 'Error');
       console.log(error);
     })
