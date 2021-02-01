@@ -4,13 +4,15 @@
         <form [formGroup]="form" (ngSubmit)="crearTarjeta()">
             <div class="input-group input-group-lg mb-3">
                 <span class="input-group-text">
-                    <i class="fas fa-user-circle"></i>
+                    <i class="fas fa-user-circle"
+                        [class.green-icon]="this.form.get('titular')?.valid"></i>
                 </span>
                 <input type="text" formControlName="titular" class="form-control" placeholder="Titular">
             </div>
             <div class="input-group input-group-lg mb-3">
                 <span class="input-group-text">
-                    <i class="fas fa-credit-card"></i>
+                    <i class="fas fa-credit-card"
+                    [class.green-icon]="this.form.get('numeroTarjeta')?.valid"></i>
                 </span>
                 <input type="text" formControlName="numeroTarjeta" class="form-control" maxlength="16" placeholder="Numero Tarjeta">
             </div>
@@ -18,7 +20,8 @@
                 <div class="col-lg-7">
                     <div class="input-group input-group-lg mb-3">
                         <span class="input-group-text">
-                            <i class="fas fa-calendar-alt"></i>
+                            <i class="fas fa-calendar-alt"
+                            [class.green-icon]="this.form.get('fechaExpiracion')?.valid"></i>
                         </span>
                         <input type="text" formControlName="fechaExpiracion" maxlength="5" class="form-control" placeholder="MM/YY">
                     </div>
@@ -26,7 +29,8 @@
                 <div class="col-lg-5">
                     <div class="input-group input-group-lg mb-3">
                         <span class="input-group-text">
-                            <i class="fas fa-key"></i>
+                            <i class="fas fa-key"
+                                [class.green-icon]="this.form.get('cvv')?.valid"></i>
                         </span>
                         <input type="password" formControlName="cvv" maxlength="3" class="form-control" placeholder="CVV">
                     </div>
