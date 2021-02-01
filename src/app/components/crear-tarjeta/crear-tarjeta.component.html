@@ -5,14 +5,16 @@
             <div class="input-group input-group-lg mb-3">
                 <span class="input-group-text">
                     <i class="fas fa-user-circle"
-                        [class.green-icon]="this.form.get('titular')?.valid"></i>
+                        [class.green-icon]="this.form.get('titular')?.valid"
+                        [class.red-icon]="this.form.get('titular')?.invalid && this.form.get('titular')?.touched"></i>
                 </span>
                 <input type="text" formControlName="titular" class="form-control" placeholder="Titular">
             </div>
             <div class="input-group input-group-lg mb-3">
                 <span class="input-group-text">
                     <i class="fas fa-credit-card"
-                    [class.green-icon]="this.form.get('numeroTarjeta')?.valid"></i>
+                    [class.green-icon]="this.form.get('numeroTarjeta')?.valid"
+                    [class.red-icon]="this.form.get('numeroTarjeta')?.invalid && this.form.get('numeroTarjeta')?.touched"></i>
                 </span>
                 <input type="text" formControlName="numeroTarjeta" class="form-control" maxlength="16" placeholder="Numero Tarjeta">
             </div>
@@ -21,7 +23,8 @@
                     <div class="input-group input-group-lg mb-3">
                         <span class="input-group-text">
                             <i class="fas fa-calendar-alt"
-                            [class.green-icon]="this.form.get('fechaExpiracion')?.valid"></i>
+                            [class.green-icon]="this.form.get('fechaExpiracion')?.valid"
+                            [class.red-icon]="this.form.get('fechaExpiracion')?.invalid && this.form.get('fechaExpiracion')?.touched"></i>
                         </span>
                         <input type="text" formControlName="fechaExpiracion" maxlength="5" class="form-control" placeholder="MM/YY">
                     </div>
@@ -30,14 +33,15 @@
                     <div class="input-group input-group-lg mb-3">
                         <span class="input-group-text">
                             <i class="fas fa-key"
-                                [class.green-icon]="this.form.get('cvv')?.valid"></i>
+                                [class.green-icon]="this.form.get('cvv')?.valid"
+                                [class.red-icon]="this.form.get('cvv')?.invalid && this.form.get('cvv')?.touched"></i>
                         </span>
                         <input type="password" formControlName="cvv" maxlength="3" class="form-control" placeholder="CVV">
                     </div>
                 </div>
             </div>
             <div class="d-grid gap-2">
-                <button class="btn btn-success btn-lg" type="submit">
+                <button [disabled]="form.invalid" class="btn btn-success btn-lg" type="submit">
                     <i class="fas fa-database"></i> &nbsp;Aceptar
                 </button>
               </div>
