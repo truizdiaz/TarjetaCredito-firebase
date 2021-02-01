@@ -23,6 +23,10 @@ export class TarjetaService {
     return this.firestore.collection('tarjetas').doc(id).delete();
   }
 
+  editarTarjeta(id: string, tarjeta: any): Promise<any> {
+    return this.firestore.collection('tarjetas').doc(id).update(tarjeta);
+  }
+
   addTarjetaEdit(tarjeta: TarjetaCredito) {
     this.tarjeta$.next(tarjeta);
   }
