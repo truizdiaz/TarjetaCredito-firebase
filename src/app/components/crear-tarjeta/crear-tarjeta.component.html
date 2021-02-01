@@ -12,7 +12,7 @@
                 <span class="input-group-text">
                     <i class="fas fa-credit-card"></i>
                 </span>
-                <input type="text" formControlName="numeroTarjeta" class="form-control" placeholder="Numero Tarjeta">
+                <input type="text" formControlName="numeroTarjeta" class="form-control" maxlength="16" placeholder="Numero Tarjeta">
             </div>
             <div class="row">
                 <div class="col-lg-7">
@@ -20,7 +20,7 @@
                         <span class="input-group-text">
                             <i class="fas fa-calendar-alt"></i>
                         </span>
-                        <input type="text" formControlName="fechaExpiracion" class="form-control" placeholder="MM/YY">
+                        <input type="text" formControlName="fechaExpiracion" maxlength="5" class="form-control" placeholder="MM/YY">
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -28,7 +28,7 @@
                         <span class="input-group-text">
                             <i class="fas fa-key"></i>
                         </span>
-                        <input type="password" formControlName="cvv" class="form-control" placeholder="CVV">
+                        <input type="password" formControlName="cvv" maxlength="3" class="form-control" placeholder="CVV">
                     </div>
                 </div>
             </div>
