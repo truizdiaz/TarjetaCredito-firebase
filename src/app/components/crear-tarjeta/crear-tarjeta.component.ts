@@ -25,6 +25,9 @@ export class CrearTarjetaComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this._tarjetaService.getTarjetaEdit().subscribe(data => {
+      console.log(data);
+    })
   }
 
   crearTarjeta() {
