@@ -1,18 +1,18 @@
 <div class="card">
     <div class="card-body">
         <h5 class="titulo mb-3">CREAR TARJETA</h5>
-        <form>
+        <form [formGroup]="form" (ngSubmit)="crearTarjeta()">
             <div class="input-group input-group-lg mb-3">
                 <span class="input-group-text">
                     <i class="fas fa-user-circle"></i>
                 </span>
-                <input type="text" class="form-control" placeholder="Titular">
+                <input type="text" formControlName="titular" class="form-control" placeholder="Titular">
             </div>
             <div class="input-group input-group-lg mb-3">
                 <span class="input-group-text">
                     <i class="fas fa-credit-card"></i>
                 </span>
-                <input type="text" class="form-control" placeholder="Numero Tarjeta">
+                <input type="text" formControlName="numeroTarjeta" class="form-control" placeholder="Numero Tarjeta">
             </div>
             <div class="row">
                 <div class="col-lg-7">
@@ -20,7 +20,7 @@
                         <span class="input-group-text">
                             <i class="fas fa-calendar-alt"></i>
                         </span>
-                        <input type="text" class="form-control" placeholder="MM/YY">
+                        <input type="text" formControlName="fechaExpiracion" class="form-control" placeholder="MM/YY">
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -28,12 +28,12 @@
                         <span class="input-group-text">
                             <i class="fas fa-key"></i>
                         </span>
-                        <input type="password" class="form-control" placeholder="CVV">
+                        <input type="password" formControlName="cvv" class="form-control" placeholder="CVV">
                     </div>
                 </div>
             </div>
             <div class="d-grid gap-2">
-                <button class="btn btn-success btn-lg" type="button">
+                <button class="btn btn-success btn-lg" type="submit">
                     <i class="fas fa-database"></i> &nbsp;Aceptar
                 </button>
               </div>
